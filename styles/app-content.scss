@@ -1,0 +1,220 @@
+// Styling for items inside src/components/app/contents
+@import './variables';
+
+$content-border-color: #ebebeb;
+
+// // Rounded corners for first and last content pieces
+.content__elements {
+  > :first-child {
+    .content {
+      border-top: 1px solid $content-border-color;
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+  }
+  > :last-child {
+    .content {
+      border-radius: 0 0 0.5rem 0.5rem;
+    }
+  }
+  > :only-child {
+    .content {
+      border-radius: 0.5rem;
+    }
+  }
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $content-border-color;
+  border-top: none;
+  overflow: hidden;
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #fff;
+    border-bottom: 1px solid $content-border-color;
+    .input {
+      margin-right: 1rem;
+      @media (min-width: $breakpoint-md) {
+        width: 50%;
+      }
+      input {
+        font-size: 1rem;
+      }
+    }
+    // Make page break not look like an input as users cant actually edit it
+    // The pagebreak being an input is just to reuse the title component
+    .input__pagebreak {
+      input {
+        opacity: 1;
+        color: $color;
+        background-color: transparent;
+        border: none;
+      }
+    }
+    &--actions {
+      display: flex;
+      align-items: center;
+      .btn {
+        color: $color;
+      }
+    }
+  }
+  &__wrapper {
+    position: relative;
+    // On smaller screens, sticky top 'Add Content' gets covered by
+    // the wrapper element on scroll 
+    z-index: 0;
+    overflow: hidden;
+    margin-top: 50px;
+  }
+  &__el {
+    position: relative;
+    z-index: 1;
+    width: calc(100% - 5rem);
+    padding: 1rem;
+    background-color: $white;
+    border-right: 1px solid $content-border-color;
+  }
+  &__el--actions {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 3rem;
+    width: 3rem;
+    height: calc(100% - 2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0 0.25rem 0.25rem 0;
+    margin: 1rem 0;
+    transform: translateX(100%);
+    transition: all 250ms ease-in;
+    .btn {
+      color: transparent;
+    }
+  }
+  &__add {
+    width: calc(100% - 5rem);
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    background-color: $white;
+    border-right: 1px solid $content-border-color;
+  }
+}
+.mobile-expand__clicker--indicator::after {
+    content: "CV voorbeeld";
+    font-family: nunito sans, sans-serif;
+    font-weight: 800;
+    color: #49494b;
+    font-size: 14px;
+}
+#app-nav > div.mobile-expand > div.mobile-expand__clicker > div > span {
+  margin-right: 5px;
+  font-size: 14px;
+  font-weight: 800;
+}
+// Special 'date' component styling
+.input__date {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  &--group {
+    width: 48%;
+    display: flex;
+    gap: 0.25rem;
+    border-radius: 6px;
+    select {
+      width: 50%;
+    }
+  }
+  &--divider {
+    width: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &--present {
+    position: absolute;
+    top: -1.25rem;
+    right: 0;
+    background-color: $white;
+  }
+}
+
+// List styles
+.content--list {
+  .list {
+    &__title {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      .list__input, .list__extra {
+        width: 100%;
+        margin-bottom: 0.25rem;
+        @media(min-width: $breakpoint-sm) {
+          width: calc(50% - 0.5rem);
+        }
+      }
+    }
+    &__extra {
+      position: relative;
+    }
+  }
+}
+
+// Education and References Styles
+.content--education, .content--reference {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .input {
+    width: 100%;
+    margin-bottom: 0.25rem;
+    @media (min-width: $breakpoint-sm) {
+      width: calc(50% - 0.5rem);
+    }
+  }
+  .input--full {
+    @media (min-width: $breakpoint-sm) {
+      width: 100%;
+    }
+  }
+}
+
+// Skill Styles
+.content--skill {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  .input {
+    width: 100%;
+    @media (min-width: $breakpoint-sm) {
+      width: calc(50% - 0.5rem);
+    }
+  }
+  .skill__list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @media (min-width: $breakpoint-sm) {
+      width: calc(50% - 0.5rem);
+    }
+  }
+  .skill__el {
+    width: 22px;
+    height: 22px;
+    margin: 11px;
+    background-color: #0050b86e;
+    cursor: pointer;
+    border-radius: 6px;
+    &--selected {
+      background-color: $primary;
+    }
+  }
+}

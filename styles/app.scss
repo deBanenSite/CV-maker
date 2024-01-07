@@ -1,0 +1,931 @@
+@import './variables';
+@import './app-content.scss';
+
+#app-layout {
+  width: 100%;
+  min-height: 100%;
+}
+
+$md-sidebar: 250px;
+$xl-sidebar: 300px;
+
+.app-page {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+}
+.app-page__component {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #fff;
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: $md-sidebar 1fr;
+  }
+  @media (min-width: $breakpoint-xl) {
+    grid-template-columns: $xl-sidebar 1fr;
+  }
+}
+#design > div > div > div:nth-child(1) > div.design__title > button {
+  color: white; }
+.app-component {
+  background-color: $light-bg;
+  border-radius: 1rem;
+  // On Mobile, when adding new content with auto-focusing,
+  // users cannot see the input because it is right at the
+  // bottom of the page, add margin so there is space between
+  // the bottom of the page and newly added item
+  margin: 1rem 0 8rem 0;
+  @media (min-width: $breakpoint-md) {
+    margin: 1rem 1rem 1rem 0;
+  }
+}
+
+.component-container {
+  width: 100%;
+  max-width: $breakpoint-xl;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+#app-nav > div.mobile-expand > div.mobile-expand__content--wrapper > div > div.app-nav__uploader > div > button {
+  background-color: white;
+  border: none;
+  color: #49494b;
+  border-radius: 96px;
+  width: auto;
+  margin-top: 10px;
+}
+#app-nav > div.app-nav__content > div.app-nav__next > button.btn.btn-primary, #app-nav > div.app-nav__content > div.app-nav__next > button.btn.btn-secondary {
+  color: white;
+  border-color: #0050b8;
+}
+.app-nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(235, 235, 235, 0.3215686275) !important;
+  z-index: 100;
+  border-top: none;
+  -webkit-backdrop-filter: brightness(0.9);
+  backdrop-filter: brightness(0.9);
+  backdrop-filter: blur(4px);
+  border-top: 1px solid #ebebebeb;
+  box-shadow: 7px 20px 20px 20px #c1c1c1;
+  @media (min-width: $breakpoint-md) {
+    position: unset;
+    padding: 2rem 1rem;
+  }
+  // Navbar title is also link, rest all a tag properties
+  a {
+    all: unset;
+  }
+  h1 {
+    display: none;
+    font-size: 1.75rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    @media (min-width: $breakpoint-md) {
+      display: block;
+    }
+    span {
+      color: $primary;
+    }
+  }
+  &__content {
+    position: sticky;
+    top: 2rem;
+    left: 0;
+    padding: 0.25rem 1rem;
+    @media (min-width: $breakpoint-md) {
+      padding: 0;
+    }
+  }
+  &__additional {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    @media (min-width: $breakpoint-md) {
+      width: $md-sidebar;
+    }
+    @media (min-width: $breakpoint-xl) {
+      width: $xl-sidebar;
+    }
+  }
+  &__uploader {
+    margin: 0.25rem 1rem;
+    .btn {
+      width: 100%;
+      font-size: 0.8rem;
+      margin: 0;
+    }
+  }
+  &__links {
+    display: none;
+    @media (min-width: $breakpoint-md) {
+      display: block;
+    }
+    .btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin: 0.5rem 0;
+    }
+    svg {
+      margin-right: 1rem;
+    }
+  }
+  &__next, &__fixed-next {
+    width: 100%;
+    display: flex;
+    .btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0.5rem 0;
+    }
+    > :first-child {
+      margin-right: 1rem;
+    }
+  }
+  &__fixed-next {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: unset;
+    padding: 1rem;
+    @media (min-width: $breakpoint-lg) {
+      display: block;
+    }
+  }
+}
+.app-preview {
+  padding: 1rem;
+  @media (min-width: $breakpoint-md) {
+    padding: 0.5rem 1rem 1rem 1rem;
+  }
+  h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    color: #49494b;
+    font-weight: 800;
+  }
+  &__content {
+    position: relative;
+    transform-origin: bottom left;
+    border: 10px solid #ebebeb;
+    border-radius: 6px;
+    &:hover {
+      .preview-btn {
+        // Small screens should not expand, there is no space
+        @media  (min-width: $breakpoint-md) {
+          display: flex;
+        }
+      }
+    }
+    .preview-btn {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 3rem;
+      height: 3rem;
+      z-index: 10;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      padding: 0.5rem;
+      transition: none;
+    }
+  }
+}
+.mobile-expand {
+  background-color: transparent;
+  padding: 0 1rem;
+  border-top: none;
+  overflow-y: auto;
+  cursor: pointer;
+  &__clicker {
+    display: flex;
+    justify-content: center;
+    &--indicator {
+      min-height: 0.5rem;
+      color: #49494b;
+      background-color: transparent;
+      border-radius: 2rem;
+      font-size: 0.7rem;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: center;
+    &--wrapper {
+      overflow-y: auto;
+      border: none;
+      border-top: none;
+      background-color: transparent;
+    }
+  }
+}
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  @media (min-width: $breakpoint-md) {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .component-container {
+    @media (max-width: #{$breakpoint-md - 1}) {
+      min-height: calc(100vh - 5rem);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+  h1 {
+    font-size: 4rem;
+    @media (min-width: $breakpoint-md) {
+      font-size: 6rem;
+    }
+  }
+  .home-link {
+    display: none;
+    @media (min-width: $breakpoint-md) {
+      display: block;
+    }
+  }
+  .subtitle {
+    margin-left: 0.5rem;
+  }
+  .home__actions {
+    align-self: center;
+    color: $white;
+    margin-top: 5rem;
+    text-align: center;
+    h2 {
+      color: $white;
+    }
+    @media (min-width: $breakpoint-md) {
+      align-self: flex-end;
+      color: $white;
+      text-align: right;
+      h2 {
+        font-size: 2.5rem;
+      }
+    }
+    @media (min-width: $breakpoint-lg) {
+      margin-top: 4rem;
+      h2 {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+.app-bg {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  @media (min-width: $breakpoint-md) {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  &__triangle {
+    position: absolute;
+    z-index: -1;
+    display: none;
+    width: 200%;
+    height: 100%;
+    bottom: 0;
+    left: -30%;
+    @media (min-width: $breakpoint-md) {
+      display: block;
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      left: 25%;
+    }
+  }
+  &__square-mini {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: $secondary;
+    z-index: -1;
+    @media (min-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+  &--wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+}
+.parallax-img {
+  position: absolute;
+  bottom: 0;
+  width: 30%;
+  &__1 {
+    left: 0;
+    transform: translate(10%, 30%) rotate(-28deg);
+  }
+  &__2 {
+    left: 33%;
+    transform: translate(20%, 20%) rotate(-28deg);
+  }
+  &__3 {
+    left: 66%;
+    transform: translate(0%, -40%) rotate(-28deg);
+  }
+}
+.header__contact--actions .custom-contact--input .btn {
+  -ms-flex-align: center;
+    text-decoration: none;
+    color: #49494b;
+    padding: 8px 16px !important;
+    background-color: #fff;
+    border-radius: 96px;
+    margin-bottom: 8;
+    white-space: nowrap;
+    margin: 5px;
+    width: 200px;
+    align-self: center;
+}
+.header__contact--actions .custom-contact--input .btn::before {
+  content: "+";
+}
+.app-continue {
+  width: 100%;
+  max-width: 300px;
+  height: 100%;
+  flex: 1;
+  .btn {
+    width: 100%;
+    margin: 1rem 0;
+    color: white;
+  }
+}
+
+// Header styles
+.header {
+  &__personal {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    background-color: $white;
+    margin: 2rem 0;
+    border-radius: 6px;
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .name, .address {
+      grid-column: 1 / 4;
+    }
+    .city, .province, .postal {
+      grid-column: 1 / 4;
+      @media (min-width: $breakpoint-md) {
+        grid-column: unset;
+      }
+    }
+  }
+  &__contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    border-radius: 6px;
+    margin: 0.5rem 0;
+    background-color: #ebebeb;
+    padding: 24px 10px;
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: 1fr 1fr;
+    }
+    &--container {
+      display: flex;
+      align-items: flex-end;
+      grid-column: 1;
+      overflow: hidden;
+      @media (min-width: $breakpoint-md) {
+        grid-column: unset;
+      }
+      .value {
+        width: 100%;
+        margin-right: 1rem;
+      }
+    }
+    &--actions {
+      grid-column: 1 / 3;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 0px;
+    gap: 10px;
+      .custom-contact {
+        width: 400px;
+        max-width: 100%;
+        height: 35px;
+        margin: 10px 0px 10px 0px;
+        @media (min-width: $breakpoint-md) {
+          width: 300px;
+        }
+        &--input {
+          width: 100%;
+          display: flex;
+          .btn {
+            margin: 0;
+            border-radius: 0px 6px 6px 0px;
+            height: 33px;
+          }
+          .input {
+            flex: 1;
+            border-radius: 6px;
+            input {
+              border-radius: 6px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Content Styles
+// #content {
+  // height: 100%;
+  // overflow-y: auto;
+  // overflow-x: hidden;}
+.content__main {
+  display: grid;
+  grid-template-columns: 1fr;
+  // For content and design sections, there are fixed top elements
+  // on small screens. Add margin so we can always see main content
+  margin-top: 0px;
+  @media (min-width: $breakpoint-md) {
+    margin-top: 0;
+  }
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: 1fr 200px;
+  }
+  @media (min-width: $breakpoint-xl) {
+    grid-template-columns: 1fr 300px;
+  }
+  h1 {
+    // On small screens add some space between title and sticky top content
+    margin-top: 1rem;
+    @media (min-width: $breakpoint-md) {
+      margin-top: 0;
+    }
+  }
+}
+.content__actions {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100% - 2rem);
+  max-width: 300px;
+  max-height: calc(100vh - 7rem);
+  overflow-y: auto;
+  margin: 2rem;
+  overflow-y: auto;
+  @media (min-width: $breakpoint-lg) {
+    overflow-y: hidden;
+  }
+  @media (min-width: $breakpoint-xl) {
+    right: 50%;
+    transform: translateX(700px);
+  }
+  &--btn {
+    background-color: $white;
+    border-radius: 6px;
+    @media (min-width: $breakpoint-xl) {
+      display: none;
+    }
+    svg {
+      width: 4rem;
+      height: 4rem;
+    }
+    &.close {
+      color: $danger;
+      transform: rotate(45deg);
+      :hover {
+        circle {
+          fill: rgba($danger, 0.1);
+        }
+      }
+    }
+  }
+}
+.content__select--wrapper {
+  width: 100%;
+  max-width: 1200px;
+  grid-row: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: #ebebeb;
+  border-radius: 6px;
+  padding: 24px 16px;
+  margin: 0;
+  @media (min-width: $breakpoint-md) {
+    position: sticky;
+    width: unset;
+    margin: 0;
+  }
+  @media (min-width: $breakpoint-lg) {
+    width: 100%;
+    grid-row: unset;
+    border-radius: 6px;
+    border-bottom: none;
+    padding: 1rem;
+  }
+}
+.content__select {
+  position: sticky;
+  top: 0;
+  left: 0;
+  @media (min-width: $breakpoint-lg) {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 4rem;
+  }
+  h3 {
+    color: #49494b;
+    font-size: 1.75rem;
+    line-height: .9375;
+    @media (min-width: $breakpoint-lg) {
+      font-size: 2rem;
+    }
+  }
+  h4 {
+    display: none;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+    @media (min-width: $breakpoint-lg) {
+      display: block;
+    }
+  }
+  .btn {
+      -ms-flex-align: center;
+      text-decoration: none;
+      color: #49494b;
+      padding: 8px 16px !important;
+      background-color: #fff;
+      border-radius: 96px;
+      margin-bottom: 8;
+      white-space: nowrap;
+      margin: 5px;
+      width: 145px;
+    @media (min-width: $breakpoint-md) {
+      white-space: unset;
+      margin: 0.25rem;
+    }
+    @media (min-width: $breakpoint-xl) {
+      font-size: 1rem;
+      padding: 0.5rem 1.5rem;
+    }
+  }
+  &--items {
+    display: block;
+    overflow-x: auto;
+    margin: 25px 0 0 0;
+    justify-content: flex-start;
+    @media (min-width: $breakpoint-md) {
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+.content__select .btn:hover {
+  color: #0050b8; }
+  .content__select .btn::before {
+    content: "+"; }
+#content > div > div > div.content__select--wrapper > div > div:nth-child(3) {
+  display: none; }
+#design > div > div > div.content__select--wrapper > div > div.content__select--items {
+  display: none; }
+.content__elements {
+  margin-top: 1rem;
+}
+.content__empty {
+  text-align: center;
+  background-color: transparent;
+  color: #49494b;
+  border-radius: 6px;
+  padding: 2rem 1rem;
+  border: 1px solid #ebebeb;
+  box-shadow: rgba(0, 0, 0, 0.08) 4px 8px 24px;
+}
+
+// Design styles
+.design__main {
+  display: grid;
+  grid-template-columns: 1fr;
+  // For content and design sections, there are fixed top elements
+  // on small screens. Add margin so we can always see main content
+  margin-top: 0px;
+  @media (min-width: $breakpoint-md) {
+    margin-top: 0;
+  }
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: 1fr 300px;
+  }
+}
+.design__title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  h1 {
+    // On small screens add some space between title and sticky top content
+    margin-top: 1rem;
+    @media (min-width: $breakpoint-md) {
+      margin-top: 0;
+    }
+  }
+  .btn {
+    width: 100%;
+    margin: 1rem 0 0 0;
+    @media (min-width: $breakpoint-md) {
+      width: unset;
+      margin: 0;
+    }
+  }
+}
+.design {
+  display: flex;
+  justify-content: center;
+  background-color: $grey-4;
+  border-radius: 1rem;
+  padding: 1rem;
+  &__preview {
+    width: 100%;
+    @media (min-width: $breakpoint-lg) {
+      width: 70%;
+    }
+  }
+  &__download {
+    display: none;
+    width: calc(100% - 2rem);
+    margin: 0 1rem !important;
+    @media (min-width: $breakpoint-lg) {
+      display: block;
+    }
+  }
+  &__select {
+    h3 {
+      text-align: center;
+    }
+  }
+}
+.design-colors {
+  .colors__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.5rem;
+    margin-bottom: 0;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    .btn {
+      font-size: 0.7rem;
+      padding: 0.375rem 1rem;
+      margin-top: 5px;  
+    }
+  }
+  .colors--wrapper {
+    position: relative;
+    padding: 0 1rem;
+    overflow: hidden;
+  }
+  .colors__container {
+    display: flex;
+    margin: 1rem 0;
+  }
+  .colors__box {
+    width: 33.33%;
+    height: 2rem;
+    cursor: pointer;
+  }
+  .colors__outline {
+    box-sizing: content-box;
+    position: absolute;
+    width: calc(100% - 1.5rem);
+    height: 2.5rem;
+    border: 0.25rem solid $accent;
+    transform: translate(-0.5rem, 0.5rem);
+    pointer-events: none;
+    border-radius: 6px;
+  }
+}
+.pdf {
+  display: flex;
+  justify-content: center;
+  &-document {
+    position: relative;
+    width: 100%;
+    background-color: $white;
+    border-radius: 0px;
+    overflow: hidden;
+    &__loader {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $grey-1;
+      h2 {
+        color: $white;
+      }
+    }
+  }
+  &__pagination {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.navigation {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  background-color: $white;
+  border-radius: 6px 6px 0 0;
+  &__icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    border: 2px solid $primary;
+    background-color: $white;
+    transition: all 300ms ease-in;
+    cursor: pointer;
+    &.completed {
+      border-color: $accent;
+    }
+    &.active, &:hover {
+      transform: scale(1.1);
+      color: $secondary;
+    }
+  }
+  &__components {
+    position: relative;
+    width: 400px;
+    display: none;
+    @media (min-width: $breakpoint-md) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+    stroke: $secondary;
+    stroke-width: 8;
+  }
+  &__moving-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+    stroke: $accent;
+    stroke-width: 8;
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: $primary;
+    background-color: $white;
+    border-radius: 6px;
+    border: none;
+    margin: 0 2rem;
+    cursor: pointer;
+    transition: all 200ms ease-in;
+    &:hover {
+      svg {
+        color: $accent;
+      }
+    }
+    &:focus {
+      outline: none;
+    }
+    &:disabled {
+      opacity: 0;
+      pointer-events: none;
+    }
+    svg {
+      transition: all 200ms ease-in;
+    }
+    &--right {
+      padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+      &:hover {
+        transform: translateX(5px);
+      }
+    }
+    &--left {
+      padding: 0.25rem 0.5rem 0.25rem 0.25rem;
+      &:hover {
+        transform: translateX(-5px);
+      }
+    }
+  }
+}
+#content > div > div > div.content__select--wrapper > div > div:nth-child(4) {
+  display: none;
+}
+.btn__app-icon.delete::before {
+  color: #ff0000;
+  content: none !important;
+}
+.btn__app-icon:hover {
+  transform: scale(1.1);
+  transition: 0.6s;
+  color: #0050b8; }
+.btn__app-icon {
+  all: unset;
+  transition: 0.6s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  padding: 0.25rem;
+  cursor: pointer;
+  &:hover {
+    background-color: scale-color(transparent, $lightness: 15%);
+  }
+  &:disabled {
+    opacity: 0.25;
+    cursor: default;
+  }
+  span {
+    white-space: nowrap;
+    margin: 0 0.25rem;
+  }
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  &.delete {
+    color: #ff0000 !important;
+    width: 17px !important;
+    background-color: transparent !important;
+  }
+  &.add {
+    color: $color-reverse;
+    background-color: transparent;
+    border-radius: 6px;
+    padding: 0.25rem 1rem;
+    &:hover {
+      background-color: $primary;
+      color: white;
+      transform: scale(1);
+    }
+  }
+}
