@@ -64,8 +64,7 @@ const Home: NextPage = () => {
         <div className={styles.privacy}>
           <h1>Je privacy is <span>beschermd!</span></h1>
           <p>
-          In tegenstelling tot veel andere hulpprogramma's voor het maken van cv's,
-           werkt de CV maker tool volledig client-side.<br></br>
+           De CV maker tool werkt volledig client-side.<br></br>
            <br></br>
          <strong>Dat betekent dat er geen externe gegevensverwerking of servers bij betrokken zijn.</strong> </p>
           <p>
