@@ -42,10 +42,10 @@ const Home: NextPage = () => {
       </section>
       <div className={styles.action}>
           <Link href="/app" legacyBehavior>
-            <a className="btn btn-link btn-primary btn-lg">CV AANMAKEN</a>
+            <a className="btn btn-link btn-primary btn-lg">Begin met een nieuw CV.</a>
           </Link>
           <Link href={{ pathname: '/app', query: { continue: true }}} legacyBehavior>
-            <a className="btn btn-link btn-secondary">CV BEWERKEN</a>
+            <a className="btn btn-link btn-secondary">Ga verder met een eerder gemaakt CV.</a>
           </Link>
         </div>
         <section className={styles.jumbotron}>
