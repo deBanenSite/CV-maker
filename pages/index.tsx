@@ -41,10 +41,10 @@ const Home: NextPage = () => {
         </div>
       </section>
       <div className={styles.action}>
-          <Link href="/app">
+          <Link href="/app" legacyBehavior>
             <a className="btn btn-link btn-primary btn-lg">CV AANMAKEN</a>
           </Link>
-          <Link href={{ pathname: '/app', query: { continue: true }}}>
+          <Link href={{ pathname: '/app', query: { continue: true }}} legacyBehavior>
             <a className="btn btn-link btn-secondary">CV BEWERKEN</a>
           </Link>
         </div>

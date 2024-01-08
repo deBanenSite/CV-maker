@@ -56,7 +56,7 @@ const Navigation: React.FC<Props> = ({ current, prev, next, go }) => {
       }
       {/* For sticky positioning */}
       <div className="app-nav__content">
-        <Link href="/">
+        <Link href="/" legacyBehavior>
           <a>
             <h4>
              
