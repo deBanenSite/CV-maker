@@ -19,33 +19,33 @@ const Home: NextPage = () => {
         <div className={styles.create}>
           <div className={styles.createStep}>
             <div className={styles.createNumber}>1.</div>
-            <h2>Starten</h2>
-            <p>Voeg je inhoud toe en pas de opmaak aan om je cv persoonlijk te maken.</p>
+            <h2>Inhoud toevoegen</h2>
+            <p>Stap voor stap en overzichtelijk.</p>
           </div>
           <div className={styles.createStep}>
             <div className={styles.createNumber}>2.</div>
-            <h2>Ontwerp</h2>
+            <h2>Ontwerpen</h2>
             <p>Kies uit een selectie van kleuren voor de vormgeving van je cv.
 </p>
           </div>
           <div className={styles.createStep}>
             <div className={styles.createNumber}>3.</div>
-            <h2>Download</h2>
-            <p>Download het gemaakte cv.</p>
+            <h2>Eindresultaat in PDF</h2>
+            <p>Download het gemaakte CV en voeg dit direct toe aan je account.</p>
           </div>
           <div className={styles.createStep}>
             <div className={styles.createNumber}>4.</div>
-            <h2>Account</h2>
-            <p>Maak een account aan en voeg het gemaakte cv toe.</p>
+            <h2>Carrière maken</h2>
+            <p>Start met zorgeloos en snel solliciteren.</p>
           </div>
         </div>
       </section>
       <div className={styles.action}>
           <Link href="/app" legacyBehavior>
-            <a className="btn btn-link btn-primary btn-lg">Begin met een nieuw CV.</a>
+            <a className="btn btn-link btn-primary btn-lg">Maak een nieuw CV</a>
           </Link>
           <Link href={{ pathname: '/app', query: { continue: true }}} legacyBehavior>
-            <a className="btn btn-link btn-secondary">Ga verder met een eerder gemaakt CV.</a>
+            <a className="btn btn-link btn-secondary">Ga verder met een bestaande CV</a>
           </Link>
         </div>
         <section className={styles.jumbotron}>
