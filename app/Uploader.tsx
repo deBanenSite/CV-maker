@@ -39,7 +39,7 @@ const Uploader: React.FC<Props> = ({ next, btnClasses = 'btn', btnText = 'Upload
     loadingTask.promise.then((doc: any) => {
       doc.getMetadata().then((data: any) => {
         if (!data || !data.info || !data.info.Custom || !data.info.Custom.serialized) {
-          setError({ show: true, message: 'Sorry, alleen een cv dat hier is gemaakt kan opnieuw worden geüpload' })
+          setError({ show: true, message: 'Gebruik alleen een CV wat eerder is gemaakt in de CV maker.' })
           return
         }
         try {
@@ -52,11 +52,11 @@ const Uploader: React.FC<Props> = ({ next, btnClasses = 'btn', btnText = 'Upload
 
           next()
         } catch (e) {
-          setError({ show: true, message: 'Fout, bestandsgegevens zijn beschadigd' })
+          setError({ show: true, message: 'Fout, bestandsgegevens zijn onjuist.' })
         }
       })
     }).catch(() => {
-      setError({ show: true, message: 'Fout bij lezen bestand' })
+      setError({ show: true, message: 'Fout bij lezen bestand.' })
     })
   }
 
@@ -76,9 +76,9 @@ const Uploader: React.FC<Props> = ({ next, btnClasses = 'btn', btnText = 'Upload
       >
         {btnText}
       </button>
-      <Modal show={error.show} title="Error" close={() => setError({ show: false, message: '' })}>
+      <Modal show={error.show} title="Foutmelding" close={() => setError({ show: false, message: '' })}>
         <div className="text--danger">
-          <p>Kan verzoek niet verwerken</p>
+          <p>Dit bestand kan niet worden gebruikt.</p>
           <p>{error.message}</p>
         </div>
       </Modal>
