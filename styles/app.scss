@@ -875,6 +875,9 @@ $xl-sidebar: 300px;
     }
   }
 }
+#design > div > div > div.content__select--wrapper > div > div.design-colors > h3 > span > button.btn.btn-primary.btn-compact {
+  -webkit-tap-highlight-color: transparent;
+}
 #content > div > div > div.content__select--wrapper > div > div:nth-child(4) {
   display: none;
 }
