@@ -35,7 +35,7 @@ const Text: React.FC<Props> = (props) => {
                   <div className="input" key={listIndex}>
                     <textarea
                       name="element"
-                      placeholder="Text"
+                      placeholder="Geef een beknopte samenvatting van je professionele achtergrond, vaardigheden en doelen."
                       value={listEl}
                       onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
                         e.preventDefault()

@@ -11,7 +11,7 @@ const selectOptions: SectionNoId[] = [
     type: SectionTypes.TEXT,
     title: 'Profiel',
     elements: [
-      { elements: ['Omschrijf profiel'] }
+      { elements: [''] }
     ]
   },
   {
@@ -25,7 +25,7 @@ const selectOptions: SectionNoId[] = [
     type: SectionTypes.SKILL,
     title: 'Vaardigheden',
     elements: [
-      { name: 'Excel', levels: [ true, true, true, true, false ] },
+      { name: '', levels: [ true, true, true, true, false ] },
     ]
   },
   {
@@ -33,9 +33,8 @@ const selectOptions: SectionNoId[] = [
     title: 'Werkervaring',
     elements: [
       {
-        title: 'Bijv. Accountmanager', company: 'Bijv. deBanenSite.nl', extra: 'Jan. 2010 - Aug. 2016', elements: [
-          'Bijv. Voerde een onderzoek uit naar de effectiviteit van producten door consumenten te interviewen en evaluatieformulieren te bekijken; de bevindingen hielpen de manager om verbeterpunten te identificeren',
-          'Loste 25 telefoontjes van klanten per dag op door vragen over creditcardprogramma s te beantwoorden, wat resulteerde in een betere klantrelatie en minder klachten.'
+        title: '', company: '', extra: '', elements: [
+          ''
         ],
       },
     ],
@@ -46,8 +45,8 @@ const selectOptions: SectionNoId[] = [
     title: 'Vrijwilligerswerk',
     elements: [
       {
-        title: 'Bijv. Donaties', company: 'Bijv. De Voedselbank', extra: 'Jan. 2010 - Aug. 2012', elements: [
-          'Bijv. Werkte samen met 12 medewerkers aan het opzetten en uitvoeren van een donatiewedstrijd voor de voedselbank, wat resulteerde in een toename van 28% van het aantal donaties.',
+        title: '', company: '', extra: '', elements: [
+          '',
         ],
       },
     ],
@@ -58,8 +57,8 @@ const selectOptions: SectionNoId[] = [
     title: 'Portfolio',
     elements: [
       {
-        title: 'Bijv. Innovatie expert', extra: 'Bijv. Verbeterplannen maken', elements: [
-          'Bijv. Ontwierp en implementeerde mijn verbeter project om het verzamelen van proefmonsters te versnellen, waardoor meer dan €100.000 per jaar wordt bespaard in vergelijking met handmatig verzamelen.'
+        title: '', extra: '', elements: [
+          ''
         ],
       }
     ],
@@ -70,7 +69,7 @@ const selectOptions: SectionNoId[] = [
     title: 'Prestaties',
     elements: [
       {
-        elements: ['Bijv. Een klantbehoud programma gestart, wat resulteerde in een 70% hoger retentie percentage.']
+        elements: ['']
       }
     ],
     simple: true,
@@ -80,12 +79,12 @@ const selectOptions: SectionNoId[] = [
     title: 'Referenties',
     elements: [
       {
-        name: 'Naam contactpersoon',
-        occupation: 'Functie contactpersoon',
-        company: 'Bedrijfsnaam',
-        companyAddress: 'Bedrijfsadres',
-        phone: 'Zakelijk telefoonnummer contactpersoon',
-        email: 'E-mailadres contactpersoon',
+        name: '',
+        occupation: '',
+        company: '',
+        companyAddress: '',
+        phone: '',
+        email: '',
       }
     ]
   }

@@ -75,7 +75,7 @@ const Reference: React.FC<Props> = (props) => {
                 <label>Bedrijfsnaam</label>
                 <input
                   name="company"
-                  placeholder="Company"
+                  placeholder="Bedrijfsnaam"
                   value={item.company}
                   onChange={(e: ChangeEvent<HTMLInputElement>) => {
                     e.preventDefault()

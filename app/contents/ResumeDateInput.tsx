@@ -73,7 +73,7 @@ const ResumeDateInput: React.FC<Props> = ({ value, onChange, label }) => {
 
   return (
     <div className="input">
-      <label>{label}</label>
+      <label>Datum</label>
       <div className="input__date">
         <div className="input__date--group">
           <select value={date.month1} name="month1" onChange={handleChange}>
