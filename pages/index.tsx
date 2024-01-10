@@ -62,12 +62,7 @@ const Home: NextPage = () => {
       </section>
       <section className="container">
         <div className={styles.privacy}>
-          <h1>Je privacy is <span>beschermd!</span></h1>
-          <p>
-           De CV maker tool werkt volledig client-side.<br></br>
-           <br></br>
-         <strong>Dat betekent dat er geen externe gegevensverwerking of servers bij betrokken zijn.</strong> </p>
-          <p>
+        <p>Je persoonlijke gegevens zijn veilig en worden volledig lokaal verwerkt door de CV maker tool. Er is geen externe gegevensverwerking of server betrokken, waardoor jouw gegevens niet kunnen worden gestolen buiten deze app.</p>
           </p>
         </div>
       </section>
