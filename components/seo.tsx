@@ -10,7 +10,7 @@ interface Props {
   // twitterCreator: string
 }
 
-const urlBase = 'https://createresu.me'
+const urlBase = 'https://debanensite.app'
 
 const defaults = {
   title: 'deBanenSite.nl',
