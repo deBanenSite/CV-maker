@@ -2,7 +2,7 @@
 
 .jumbotron {
   position: relative;
-  min-height: 80vh;
+  min-height: inherit;
   color: $color-reverse;
   background-color: transparent;
   border-radius: 1rem;
@@ -80,7 +80,7 @@
   }
 }
 .spacer {
-  height: 150px;
+  height: 200px;
 }
 .samples {
   position: absolute;
@@ -104,7 +104,7 @@
 .sampleImg {
   position: absolute;
   width: 100%;
-  max-width: 300px;
+  max-width: 150px;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   animation: samples-move 1s ease-in-out alternate;
 }
@@ -187,6 +187,7 @@
 .createHeader {
   text-align: center;
   margin-top: 4rem;
+  display: none;
 }
 
 .privacy {

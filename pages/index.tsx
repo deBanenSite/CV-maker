@@ -14,6 +14,18 @@ const Home: NextPage = () => {
   return (
     <Layout fluid={true}>
       <SEO title="Home" />
+      <section className={styles.jumbotron}>
+        <div className={styles.title}>
+          <h1>
+          </h1>
+        </div>
+        <div className={styles.spacer} />
+        <div className={styles.samples}>
+          <img src={CluoImg.src} alt="" className={styles.sampleImg + ' ' + styles.sampleOne} />
+          <img src={CogitoImg.src} alt="" className={styles.sampleImg}  />
+          <img src={TeresImg.src} alt="" className={styles.sampleImg + ' ' + styles.sampleThree}  />
+        </div>
+      </section>
            <section className="container">
         <h1 className={styles.createHeader}>CV maker</h1>
         <div className={styles.create}>
@@ -48,18 +60,6 @@ const Home: NextPage = () => {
             <a className="btn btn-link btn-secondary">Ga verder met een bestaande CV</a>
           </Link>
         </div>
-        <section className={styles.jumbotron}>
-        <div className={styles.title}>
-          <h1>
-          </h1>
-        </div>
-        <div className={styles.spacer} />
-        <div className={styles.samples}>
-          <img src={CluoImg.src} alt="" className={styles.sampleImg + ' ' + styles.sampleOne} />
-          <img src={CogitoImg.src} alt="" className={styles.sampleImg}  />
-          <img src={TeresImg.src} alt="" className={styles.sampleImg + ' ' + styles.sampleThree}  />
-        </div>
-      </section>
       <section className="container">
         <div className={styles.privacy}>
           <h1><span></span></h1>
