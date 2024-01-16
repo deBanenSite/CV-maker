@@ -17,7 +17,7 @@ const Design = ({ active }: { active: boolean }) => {
   const downloadActive = () => {
     const document = activeTemplate.render(sections, header)
     const pdf = createPDF(document)
-    pdf.download(`deBanenSite-CV-${header.name}.pdf`)
+    pdf.download(`deBanenSite-CV - ${header.name}.pdf`)
     setShowModal(true)
   }
 
