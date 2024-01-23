@@ -23,12 +23,12 @@ export default class Base {
     defaultSize: 11
   }
   public colors: Colors = {
-    primary: '#0050b8',
+    primary: '#4444f1',
     secondary: '#212121',
     accent: 'grey'
   }
   public defaultColors: Colors = {
-    primary: '#0050b8',
+    primary: '#4444f1',
     secondary: '#212121',
     accent: 'grey'
   }

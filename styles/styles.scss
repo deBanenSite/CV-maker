@@ -215,7 +215,7 @@ p {
     border: none;
     border-radius: 6px;
     box-shadow: none !important;
-    background: #0050b8;
+    background: #4444f1;
     color: var(--color-button-text,#fff);
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -272,7 +272,7 @@ p {
   align-self: center;
 }
 #app-layout > div > div.app-component > div > div:nth-child(4) > div > div > button:hover {
-  color: #0050b8;
+  color: #4444f1;
 }
 #app-layout > div > div.app-component > div > div:nth-child(4) > div > div > button::before {
   content: "+";

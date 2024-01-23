@@ -57,7 +57,7 @@ $xl-sidebar: 300px;
 }
 #app-nav > div.app-nav__content > div.app-nav__next > button.btn.btn-primary, #app-nav > div.app-nav__content > div.app-nav__next > button.btn.btn-secondary {
   color: white;
-  border-color: #0050b8;
+  border-color: #4444f1;
 }
 .app-nav {
   position: fixed;
@@ -621,7 +621,7 @@ $xl-sidebar: 300px;
   }
 }
 .content__select .btn:hover {
-  color: #0050b8; }
+  color: #4444f1; }
   .content__select .btn::before {
     content: "+"; }
 #content > div > div > div.content__select--wrapper > div > div:nth-child(3) {
@@ -888,7 +888,7 @@ $xl-sidebar: 300px;
 .btn__app-icon:hover {
   transform: scale(1.1);
   transition: 0.6s;
-  color: #0050b8; }
+  color: #4444f1; }
 .btn__app-icon {
   all: unset;
   transition: 0.6s;
